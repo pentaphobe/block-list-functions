@@ -17,4 +17,5 @@ This is likely a shortcoming of my understanding, rather than the methods themse
 ## History
 
 - 20160407 Initial git commit
+    + additional example showing approximation of π (pi) using Gregory Series
 - 20160405 Tested assumptions, rejoiced

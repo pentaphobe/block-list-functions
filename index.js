@@ -3,7 +3,6 @@
 var bm = require('./blockmap'),
   extensions = require('./array-prototypes');
 
-
 /**
  * Basic skip test
  */
@@ -72,3 +71,28 @@ var average3D = items
               cur.map( (val, idx) => (last[idx] || 0) + val )
             , []);
 console.log(average3D);
+
+
+/** 
+ * approximate PI with the Gregory Series ( 1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 ... )
+ * (probably would be a nicer example with lazy lists)
+ *
+ * Since the operation changes between + or - for each
+ * progressive iteration, it would normally be a little
+ * awkward with just map/reduce.
+ *
+ * By taking two at a time this becomes trivial
+ */
+console.log('\n## Approximate π');
+
+// odd natural numbers > 1
+var numbers = Array.apply(null, Array(5000)).map( (v, idx) => (idx*2)+3 );
+
+var pi = 4 * numbers
+          .groupBy(2)
+          .dump('grouped:')
+          .reduce( (last, pair) => 
+            last - (1 / pair[0]) + (1 / pair[1])
+          , 1);
+console.log('pi ~= ', pi);
+
