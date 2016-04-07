@@ -11,6 +11,8 @@ This is likely a shortcoming of my understanding, rather than the methods themse
 - [ ] More documentation
 - [ ] Tests
 - [ ] Seriously.  Add *lots* of examples.
+- [ ] UMD
+- [ ] automate
 
 ## History
 
